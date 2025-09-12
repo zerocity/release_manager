@@ -1,0 +1,20 @@
+[tools]
+node = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
+
+[tasks.build]
+description = 'Build service'
+run = "npm run build"
+
+[tasks.start]
+description = 'start app in production'
+run = "npm start"
+
+
+[tasks.dev]
+description = 'Build service'
+run = "npm run dev"
+
+[tasks.test]
+description = 'Build service'
+run = "npm run test"

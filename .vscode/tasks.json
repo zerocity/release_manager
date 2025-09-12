@@ -1,0 +1,154 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ESLint: Check All Files",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "lint"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": [
+        {
+          "owner": "eslint",
+          "fileLocation": "absolute",
+          "pattern": [
+            {
+              "regexp": "^(.+)$",
+              "file": 1
+            },
+            {
+              "regexp": "^\\s+(\\d+):(\\d+)\\s+(error|warning|info)\\s+(.+)\\s+(.+)$",
+              "line": 1,
+              "column": 2,
+              "severity": 3,
+              "message": 4,
+              "code": 5,
+              "loop": true
+            }
+          ]
+        }
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "ESLint: Fix All Files",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "lint:fix"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": [
+        {
+          "owner": "eslint",
+          "fileLocation": "absolute",
+          "pattern": [
+            {
+              "regexp": "^(.+)$",
+              "file": 1
+            },
+            {
+              "regexp": "^\\s+(\\d+):(\\d+)\\s+(error|warning|info)\\s+(.+)\\s+(.+)$",
+              "line": 1,
+              "column": 2,
+              "severity": 3,
+              "message": 4,
+              "code": 5,
+              "loop": true
+            }
+          ]
+        }
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Prettier: Format All Files",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "format"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "TypeScript: Check Types",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "typecheck"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": "$tsc",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Build Project",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": "$tsc",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  ]
+}
