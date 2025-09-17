@@ -34,5 +34,6 @@ run = "npm start"
 
 [tasks.dev]
 description = 'Start development server'
+env.API_KEY = "dev-api-key"
 run = "npm run dev"
 
