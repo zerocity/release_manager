@@ -2,14 +2,6 @@
 
 A TypeScript-based REST API service for managing service deployments and system versioning.
 
-## Features
-
-- **Service Deployment Tracking**: Register and track service deployments with version control
-- **System Versioning**: Automatically increments system version when service versions change
-- **RESTful API**: Clean API endpoints for deployment and service management
-- **Type Safety**: Full TypeScript implementation with Zod validation
-- **In-Memory Storage**: Currently uses in-memory repositories (easily swappable for databases)
-
 ## Installation
 
 ```bash
@@ -63,6 +55,7 @@ mise start  # Run production server
 ### Deployment Management
 
 All deployment endpoints require API key authentication. Include the API key in one of:
+
 - Header: `X-API-Key: your-api-key`
 - Query parameter: `?api_key=your-api-key`
 
@@ -100,15 +93,15 @@ All deployment endpoints require API key authentication. Include the API key in 
 
 ```
 src/
-├── app.ts                 # Express application setup
-├── index.ts              # Server entry point
-├── config/               # Configuration and environment validation
-├── controllers/          # Request handlers
-├── services/            # Business logic layer
-├── repositories/        # Data access layer
-├── routes/              # API route definitions
-├── middleware/          # Express middleware
-└── types/               # TypeScript types and Zod schemas
+├── app.ts                  # Express application setup
+├── index.ts                # Server entry point
+├── config/                 # Configuration and environment validation
+├── controllers/            # Request handlers
+├── services/               # Business logic layer
+├── repositories/           # Data access layer
+├── routes/                 # API route definitions
+├── middleware/             # Express middleware
+└── types/                  # TypeScript types and Zod schemas
 ```
 
 ### Key Components
@@ -133,6 +126,7 @@ mise test
 ```
 
 Or using npm:
+
 ```bash
 npm test
 ```
