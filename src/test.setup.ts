@@ -1,3 +1,4 @@
+import './config/env';
 import { beforeAll, afterEach, afterAll } from 'vitest';
 import supertest, { Test } from 'supertest';
 import { Server } from 'http';
@@ -6,6 +7,9 @@ import TestAgent from 'supertest/lib/agent';
 
 let server: Server;
 let request: TestAgent<Test>;
+
+// Set test API key
+export const TEST_API_KEY = 'test-api-key';
 
 beforeAll(async () => {
   // Start server on random port for testing

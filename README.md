@@ -58,9 +58,13 @@ mise start  # Run production server
 
 ### Health Check
 
-- `GET /health` - Service health status
+- `GET /health` - Service health status (no authentication required)
 
 ### Deployment Management
+
+All deployment endpoints require API key authentication. Include the API key in one of:
+- Header: `X-API-Key: your-api-key`
+- Query parameter: `?api_key=your-api-key`
 
 - `POST /api/deploy` - Register a service deployment
 
@@ -79,7 +83,7 @@ mise start  # Run production server
   }
   ```
 
-- `GET /api/services?systemVersion=1` - Get services at a specific system version
+- `GET /api/services?systemVersion=1` - Get services at a specific system version (requires API key)
   Returns:
   ```json
   [
@@ -118,6 +122,7 @@ src/
 
 - `PORT` - Server port (default: 3000)
 - `NODE_ENV` - Environment: development/production/test (default: development)
+- `API_KEY` - API key for authentication (default: development-api-key)
 
 ## Testing
 

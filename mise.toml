@@ -8,6 +8,7 @@ run = "npm run typecheck"
 
 [tasks.test]
 description = 'Run unit tests'
+env.API_KEY = "test-api-key"
 run = "npm run test"
 
 [tasks.lint]
