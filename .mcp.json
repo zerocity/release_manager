@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "wallaby": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "-c", "node ~/.wallaby/mcp"],
+      "env": {}
+    },
+    "mise": {
+      "command": "mise",
+      "args": ["mcp"],
+      "env": {
+        "MISE_EXPERIMENTAL": "1"
+      }
+    }
+  }
+}

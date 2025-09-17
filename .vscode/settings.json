@@ -1,6 +1,6 @@
 {
     "debug.javascript.defaultRuntimeExecutable": {
-        "pwa-node": "/home/zerocity/.local/share/mise/shims/node"
+        "pwa-node": "/Users/pbisson/.local/share/mise/shims/node"
     },
     "eslint.enable": true,
     "eslint.validate": [

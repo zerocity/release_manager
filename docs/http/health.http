@@ -1,0 +1,4 @@
+# https://open-vsx.org/vscode/item?itemName=anweber.vscode-httpyac
+
+## Health Check
+GET http://localhost:3000/health

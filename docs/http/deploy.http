@@ -1,0 +1,62 @@
+# https://open-vsx.org/vscode/item?itemName=anweber.vscode-httpyac
+
+
+# Deploy Service Endpoint
+# POST /api/deploy - Register a service deployment
+
+@baseUrl = http://localhost:3000
+
+### Deploy a service
+# This endpoint registers a service deployment and returns the current system version.
+# If the service version has changed, it increments the system version and creates
+# a snapshot of all currently deployed services.
+
+POST {{baseUrl}}/api/deploy
+Content-Type: application/json
+
+{
+  "name": "MyService",
+  "version": 1
+}
+
+# Expected Response:
+# {
+#   "systemVersion": 1
+# }
+
+### Deploy the same service with same version (no system version change)
+POST {{baseUrl}}/api/deploy
+Content-Type: application/json
+
+{
+  "name": "MyService",
+  "version": 1
+}
+
+# Expected Response: Same system version
+# {
+#   "systemVersion": 1
+# }
+
+### Deploy the same service with new version (system version increments)
+POST {{baseUrl}}/api/deploy
+Content-Type: application/json
+
+{
+  "name": "MyService",
+  "version": 2
+}
+
+# Expected Response: New system version
+# {
+#   "systemVersion": 2
+# }
+
+### Deploy a new service 
+POST {{baseUrl}}/api/deploy
+Content-Type: application/json
+
+{
+  "name": "AnotherService",
+  "version": 1
+}

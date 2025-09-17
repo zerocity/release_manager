@@ -1,20 +1,37 @@
 [tools]
-node = "latest"
+node = "24.2.0"
 "npm:@anthropic-ai/claude-code" = "latest"
+
+[tasks.typecheck]
+description = 'Run TypeScript type checks'
+run = "npm run typecheck"
+
+[tasks.test]
+description = 'Run unit tests'
+run = "npm run test"
+
+[tasks.lint]
+description = 'Run linter'
+run = "npm run lint"
+
+[tasks.format]
+description = 'Format code with Prettier'
+run = "npm run format"
 
 [tasks.build]
 description = 'Build service'
+depends = [
+    "typecheck",
+    "lint",
+    "test"
+]
 run = "npm run build"
 
 [tasks.start]
 description = 'start app in production'
 run = "npm start"
 
-
 [tasks.dev]
-description = 'Build service'
+description = 'Start development server'
 run = "npm run dev"
 
-[tasks.test]
-description = 'Build service'
-run = "npm run test"

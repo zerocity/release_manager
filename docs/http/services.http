@@ -1,0 +1,45 @@
+# https://open-vsx.org/vscode/item?itemName=anweber.vscode-httpyac
+
+
+# Services Query Endpoint
+# GET /api/services?systemVersion=<number> - Query services at a specific system version
+
+@baseUrl = http://localhost:3000
+
+### Query services at system version 1
+# This endpoint returns all services and their versions that were deployed
+# at the specified system version.
+
+GET {{baseUrl}}/api/services?systemVersion=1
+
+# Expected Response: Array of services
+# [
+#   {
+#     "name": "Service A",
+#     "version": 1
+#   },
+#   {
+#     "name": "Service B", 
+#     "version": 2
+#   }
+# ]
+
+### Query services at system version 2
+GET {{baseUrl}}/api/services?systemVersion=2
+
+### Query non-existent system version (returns 404)
+GET {{baseUrl}}/api/services?systemVersion=999
+
+# Expected Response: 404 Not Found
+# {
+#   "success": false,
+#   "message": "System version 999 not found"
+# }
+
+### Invalid query parameter (returns 400)
+GET {{baseUrl}}/api/services?systemVersion=invalid
+
+# Expected Response: 400 Bad Request with validation error
+
+### Query services at system version 3
+GET {{baseUrl}}/api/services?systemVersion=3
