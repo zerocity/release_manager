@@ -13,6 +13,7 @@
 
 POST {{baseUrl}}/api/deploy
 Content-Type: application/json
+X-API-Key: dev-api-key
 
 {
   "name": "MyService",
@@ -27,6 +28,7 @@ Content-Type: application/json
 ### Deploy the same service with same version (no system version change)
 POST {{baseUrl}}/api/deploy
 Content-Type: application/json
+X-API-Key: dev-api-key
 
 {
   "name": "MyService",
@@ -41,6 +43,7 @@ Content-Type: application/json
 ### Deploy the same service with new version (system version increments)
 POST {{baseUrl}}/api/deploy
 Content-Type: application/json
+X-API-Key: dev-api-key
 
 {
   "name": "MyService",
@@ -55,6 +58,7 @@ Content-Type: application/json
 ### Deploy a new service 
 POST {{baseUrl}}/api/deploy
 Content-Type: application/json
+X-API-Key: dev-api-key
 
 {
   "name": "AnotherService",
